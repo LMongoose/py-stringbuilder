@@ -22,8 +22,9 @@ class StringBuilder():
     def __iter__(self):
         return self._array
 
-    def clear(self):
-        self._array.clear()
+    def __del__(self):
+        del self._array
+        del self
 
     def append(self, item):
         if(isinstance(item, bool)):
@@ -56,46 +57,49 @@ class StringBuilder():
 
     def append_join(self, separator: str, item: list):
         if(not isinstance(separator, str)):
-            raise ValueError(f"The parameter \"separator\" must be a string.")
+            raise ValueError("The parameter \"separator\" must be a string.")
 
         if(not isinstance(separator, list)):
-            raise ValueError(f"The parameter \"item\" must be a list.")
+            raise ValueError("The parameter \"item\" must be a list.")
 
         self._array.extend(separator.join(str(x) for x in item))
 
     def char_at(self, index: int):
         if(not isinstance(index, int)):
-            raise ValueError(f"The parameter \"index\" must be an integer.")
+            raise ValueError("The parameter \"index\" must be an integer.")
 
         return self._array[index]
 
+    def clear(self):
+        self._array.clear()
+
     def delete(self, start: int, end: int):
         if(not isinstance(start, int)):
-            raise ValueError(f"The parameter \"start\" must be an integer.")
+            raise ValueError("The parameter \"start\" must be an integer.")
 
         if(not isinstance(end, int)):
-            raise ValueError(f"The parameter \"end\" must be an integer.")
+            raise ValueError("The parameter \"end\" must be an integer.")
 
         del self._array[start:end]
 
     def delete_char_at(self, index: int):
         if(not isinstance(index, int)):
-            raise ValueError(f"The parameter \"index\" must be an integer.")
+            raise ValueError("The parameter \"index\" must be an integer.")
 
         self._array.pop(index)
 
-    def index_of(self, string: str, start: int = 0):
+    def index_of(self, string: str, start = 0):
         if(not isinstance(string, str)):
-            raise ValueError(f"The parameter \"string\" must be a string.")
+            raise ValueError("The parameter \"string\" must be a string.")
 
         if(not isinstance(start, int)):
-            raise ValueError(f"The parameter \"start\" must be an integer.")
+            raise ValueError("The parameter \"start\" must be an integer.")
 
         return self._array.index(string, start)
 
     def insert(self, index: int, item):
         if(not isinstance(index, int)):
-            raise ValueError(f"The parameter \"index\" must be an integer.")
+            raise ValueError("The parameter \"index\" must be an integer.")
 
         self._array.insert(index, str(item))
 
@@ -123,10 +127,10 @@ class StringBuilder():
 
     def replace(self, old: str, new: str):
         if(not isinstance(old, str)):
-            raise ValueError(f"The parameter \"old\" must be a string.")
+            raise ValueError("The parameter \"old\" must be a string.")
 
         if(not isinstance(new, str)):
-            raise ValueError(f"The parameter \"new\" must be a string.")
+            raise ValueError("The parameter \"new\" must be a string.")
 
         for item in self._array:
             item.replace(old, new)
@@ -134,8 +138,11 @@ class StringBuilder():
     def reverse(self):
         self._array.reverse()
 
-    def substring(self, start: int):
+    def substring(self, start: int, end=(len(self) - 1)):
         if(not isinstance(start, int)):
-            raise ValueError(f"The parameter \"start\" must be an integer.")
+            raise ValueError("The parameter \"start\" must be an integer.")
 
-        return "".join(self._array[start:])
+        if(not isinstance(end, int)):
+            raise ValueError("The parameter \"end\" must be an integer.")
+
+        return "".join(self._array[start:end])
