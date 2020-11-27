@@ -19,12 +19,11 @@ class StringBuilder():
     def __repr__(self):
         return str(self)
 
-    def __iter__(self):
-        return self._array
-
-    def __del__(self):
-        del self._array
-        del self
+    def __getitem__(self, index: int):
+        if(not isinstance(index, int)):
+            raise ValueError("The parameter \"index\" must be an integer.")
+        
+        return self._array[index]
 
     def append(self, item):
         if(isinstance(item, bool)):
@@ -49,7 +48,7 @@ class StringBuilder():
                 self._array.append(str(value))
 
         elif(isinstance(item, StringBuilder)):
-            for value in item:
+            for value in item._array:
                 self._array.append(str(value))
 
         else:
@@ -138,11 +137,14 @@ class StringBuilder():
     def reverse(self):
         self._array.reverse()
 
-    def substring(self, start: int, end=(len(self) - 1)):
+    def substring(self, start: int, end: int = None):
         if(not isinstance(start, int)):
             raise ValueError("The parameter \"start\" must be an integer.")
 
         if(not isinstance(end, int)):
             raise ValueError("The parameter \"end\" must be an integer.")
+
+        if(end == None):
+            end = (len(self) - 1)
 
         return "".join(self._array[start:end])
