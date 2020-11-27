@@ -25,9 +25,6 @@ class StringBuilder():
     def clear(self):
         self._array.clear()
 
-    def size(self):
-        return len(self)
-
     def append(self, item):
         if(isinstance(item, bool)):
             self._array.append(str(item))
