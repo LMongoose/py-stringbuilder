@@ -5,6 +5,9 @@ class StringBuilder():
     def __init__(self):
         self._array = []
 
+    def __hash__(self):
+        return hash(self._array)
+
     def __len__(self):
         return len(self._array)
 
@@ -14,24 +17,20 @@ class StringBuilder():
     def __repr__(self):
         return "".join(self._array)
 
-    ## __hash__
-    ## __format__?
-    ## __iter__
-    ## __getitem__
-    ## __setitem__
-    ## __delitem__
-    ## __dict__?
-    ## __getattribute__?
-    ## __setattr__?
-    ## __delattr__?
-    ## __eq__ , __ne__ , __gt__ , __lt__ , __ge__ , __le__
-    ## __add__?, __mul__ ...
+    def __iter__(self):
+        return self._array
 
     def clear(self):
         self._array.clear()
 
+    def size(self):
+        return len(self)
+
     def append(self, item):
-        if(isinstance(item, int)):
+        if(isinstance(item, bool)):
+            self._array.append(str(item))
+
+        elif(isinstance(item, int)):
             self._array.append(str(item))
 
         elif(isinstance(item, float)):
@@ -47,6 +46,10 @@ class StringBuilder():
 
         elif(isinstance(item, dict)):
             for value in item.values():
+                self._array.append(str(value))
+
+        elif(isinstance(item, StringBuilder)):
+            for value in item:
                 self._array.append(str(value))
 
         else:
@@ -98,9 +101,6 @@ class StringBuilder():
 
     def reverse(self):
         self._array.reverse()
-
-    def size(self):
-        return len(self)
 
     def substring(self, start: int):
         return "".join(self._array[start:])
