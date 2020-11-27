@@ -22,8 +22,6 @@ class StringBuilder():
     def __iter__(self):
         return self._array
 
-    ## TODO: validate method parameters and raise TypeError if is wrong
-
     def clear(self):
         self._array.clear()
 
@@ -62,37 +60,46 @@ class StringBuilder():
     def append_join(self, separator: str, item: list):
         if(not isinstance(separator, str)):
             raise ValueError(f"The parameter \"separator\" must be a string.")
+
         if(not isinstance(separator, list)):
             raise ValueError(f"The parameter \"item\" must be a list.")
+
         self._array.extend(separator.join(str(x) for x in item))
 
     def char_at(self, index: int):
         if(not isinstance(index, int)):
             raise ValueError(f"The parameter \"index\" must be an integer.")
+
         return self._array[index]
 
     def delete(self, start: int, end: int):
         if(not isinstance(start, int)):
             raise ValueError(f"The parameter \"start\" must be an integer.")
+
         if(not isinstance(end, int)):
             raise ValueError(f"The parameter \"end\" must be an integer.")
+
         del self._array[start:end]
 
     def delete_char_at(self, index: int):
         if(not isinstance(index, int)):
             raise ValueError(f"The parameter \"index\" must be an integer.")
+
         self._array.pop(index)
 
     def index_of(self, string: str, start: int = 0):
         if(not isinstance(string, str)):
             raise ValueError(f"The parameter \"string\" must be a string.")
+
         if(not isinstance(start, int)):
             raise ValueError(f"The parameter \"start\" must be an integer.")
+
         return self._array.index(string, start)
 
     def insert(self, index: int, item):
         if(not isinstance(index, int)):
             raise ValueError(f"The parameter \"index\" must be an integer.")
+
         self._array.insert(index, str(item))
 
     def remove(self, item):
@@ -120,8 +127,10 @@ class StringBuilder():
     def replace(self, old: str, new: str):
         if(not isinstance(old, str)):
             raise ValueError(f"The parameter \"old\" must be a string.")
+
         if(not isinstance(new, str)):
             raise ValueError(f"The parameter \"new\" must be a string.")
+
         for item in self._array:
             item.replace(old, new)
 
@@ -131,4 +140,5 @@ class StringBuilder():
     def substring(self, start: int):
         if(not isinstance(start, int)):
             raise ValueError(f"The parameter \"start\" must be an integer.")
+
         return "".join(self._array[start:])
