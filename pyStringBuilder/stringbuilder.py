@@ -15,10 +15,12 @@ class StringBuilder():
         return "".join(self._array)
 
     def __repr__(self):
-        return "".join(self._array)
+        return str(self)
 
     def __iter__(self):
         return self._array
+
+    ## TODO: validate method parameters and raise TypeError if is wrong
 
     def clear(self):
         self._array.clear()
