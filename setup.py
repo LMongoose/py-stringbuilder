@@ -8,7 +8,7 @@ setup(
   author = 'LMongoose',
   author_email = 'lukaspellezario@hotmail.com',
   url = 'https://github.com/LMongoose/py-stringbuilder',
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',
+  download_url = 'https://github.com/LMongoose/py-stringbuilder/0.0.1.tar.gz',
   keywords = ['string', 'building', 'concatenation'],
   install_requires=[],
   classifiers=[
