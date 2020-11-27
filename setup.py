@@ -1,15 +1,11 @@
 from distutils.core import setup
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
 setup(
-  name = 'py-stringbuilder',
-  packages = ['py-stringbuilder'],
-  version = '0.0.1',
+  name = 'pyStringBuilder',
+  packages = ['pyStringBuilder'],
+  version = '0.0.2',
   license = 'GNU GPLv3',
-  description = 'TYPE YOUR DESCRIPTION HERE',
-  long_description = long_description,
+  description = 'A python implementation of StringBuilder class found on Java and C-Sharp.',
   author = 'LMongoose',
   author_email = 'lukaspellezario@hotmail.com',
   url = 'https://github.com/LMongoose/py-stringbuilder',
