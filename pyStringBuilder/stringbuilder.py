@@ -63,8 +63,8 @@ class StringBuilder():
 
         self._array.extend(separator.join(str(x) for x in item))
 
-    def capitalize(self):
-        pass
+    def capitalize(self) -> str:
+        return str(self).capitalize()
 
     def char_at(self, index: int) -> str:
         if(not isinstance(index, int)):
@@ -90,14 +90,39 @@ class StringBuilder():
 
         self._array.pop(index)
 
-    def encode(self):
-        pass
+    def encode(self, encoding="utf-8", errors="strict") -> bytes:
+        if(not isinstance(encoding, str)):
+            raise ValueError("The parameter \"encoding\" must be a string.")
 
-    def endswith(self, substring: str):
-        pass
+        if(not isinstance(errors, int)):
+            raise ValueError("The parameter \"errors\" must be a string.")
 
-    def find(self, substring: str):
-        pass
+
+        return str(self).encode(encoding, errors)
+
+    def endswith(self, substring: str, start=0, end=-1) -> bool:
+        if(not isinstance(substring, str)):
+            raise ValueError("The parameter \"substring\" must be a string.")
+
+        if(not isinstance(start, int)):
+            raise ValueError("The parameter \"start\" must be an integer.")
+
+        if(not isinstance(end, int)):
+            raise ValueError("The parameter \"end\" must be an integer.")
+
+        return str(self).endswith(substring, start, end)
+
+    def find(self, substring: str, start=0, end=-1) -> int:
+        if(not isinstance(substring, str)):
+            raise ValueError("The parameter \"substring\" must be a string.")
+
+        if(not isinstance(start, int)):
+            raise ValueError("The parameter \"start\" must be an integer.")
+
+        if(not isinstance(end, int)):
+            raise ValueError("The parameter \"end\" must be an integer.")
+
+        return str(self).find(substring, start, end)
 
     def index_of(self, string: str, start = 0) -> int:
         if(not isinstance(string, str)):
@@ -114,11 +139,11 @@ class StringBuilder():
 
         self._array.insert(index, str(item))
 
-    def lower(self):
-        pass
+    def lower(self) -> str:
+        return str(self).lower()
 
-    def lstrip(self):
-        pass
+    def lstrip(self) -> str:
+        return str(self).lstrip()
 
     def remove(self, item) -> None:
         if(isinstance(item, int)):
@@ -155,14 +180,29 @@ class StringBuilder():
     def reverse(self) -> None:
         self._array.reverse()
 
-    def split(self, separator: str):
-        pass
+    def split(self, separator: str, maxsplit=-1) -> str:
+        if(not isinstance(substring, str)):
+            raise ValueError("The parameter \"substring\" must be a string.")
 
-    def startswith(self):
-        pass
+        if(not isinstance(maxsplit, int)):
+            raise ValueError("The parameter \"maxsplit\" must be an integer.")
 
-    def strip(self):
-        pass
+        return str(self).split(separator, maxsplit)
+
+    def startswith(self, substring: str, start=0, end=-1) -> bool:
+        if(not isinstance(substring, str)):
+            raise ValueError("The parameter \"substring\" must be a string.")
+
+        if(not isinstance(start, int)):
+            raise ValueError("The parameter \"start\" must be an integer.")
+
+        if(not isinstance(end, int)):
+            raise ValueError("The parameter \"end\" must be an integer.")
+
+        return str(self).startswith(substring, start, end)
+
+    def strip(self) -> str:
+        return str(self).strip()
 
     def substring(self, start: int, end: int = None) -> str:
         if(not isinstance(start, int)):
@@ -176,8 +216,8 @@ class StringBuilder():
 
         return "".join(self._array[start:end])
 
-    def swapcase(self):
-        pass
+    def swapcase(self) -> str:
+        return str(self).swapcase()
 
-    def upper(self):
-        pass
+    def upper(self) -> str:
+        return str(self).upper()
