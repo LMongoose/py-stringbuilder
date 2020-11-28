@@ -97,7 +97,6 @@ class StringBuilder():
         if(not isinstance(errors, int)):
             raise ValueError("The parameter \"errors\" must be a string.")
 
-
         return str(self).encode(encoding, errors)
 
     def endswith(self, substring: str, start = 0, end = -1) -> bool:
@@ -124,14 +123,17 @@ class StringBuilder():
 
         return str(self).find(substring, start, end)
 
-    def index_of(self, string: str, start = 0) -> int:
+    def index_of(self, string: str, start = 0, stop = -1) -> int:
         if(not isinstance(string, str)):
             raise ValueError("The parameter \"string\" must be a string.")
 
         if(not isinstance(start, int)):
             raise ValueError("The parameter \"start\" must be an integer.")
 
-        return self._array.index(string, start)
+        if(not isinstance(stop, int)):
+            raise ValueError("The parameter \"end\" must be an integer.")
+
+        return self._array.index(string, start, stop)
 
     def insert(self, index: int, item) -> None:
         if(not isinstance(index, int)):
@@ -182,6 +184,12 @@ class StringBuilder():
 
     def reverse(self) -> None:
         self._array.reverse()
+
+    def rstrip(self, chars = None) -> str:
+        if(not isinstance(chars, str)):
+            raise ValueError("The parameter \"chars\" must be a string.")
+
+        return str(self).rstrip(chars)
 
     def split(self, separator: str, maxsplit = -1) -> str:
         if(not isinstance(substring, str)):
