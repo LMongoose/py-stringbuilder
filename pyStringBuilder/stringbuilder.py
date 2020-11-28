@@ -25,6 +25,12 @@ class StringBuilder():
         
         return self._array[index]
 
+    def __eq__(self, other) -> bool:
+        if(type(self) == type(other)):
+            return self._array == other._array
+        else:
+            return False
+
     def append(self, item) -> None:
         if(isinstance(item, bool)):
             self._array.append(str(item))
@@ -62,6 +68,16 @@ class StringBuilder():
             raise ValueError("The parameter \"item\" must be a list.")
 
         self._array.extend(separator.join(str(x) for x in item))
+
+    def append_line(self, string: str = None):
+        if(not isinstance(string, str)):
+            raise ValueError("The parameter \"string\" must be a string.")
+
+        if(string is None):
+            self.append("\n")
+        else:
+            self.append(string)
+            self.append("\n")
 
     def capitalize(self) -> str:
         return str(self).capitalize()
