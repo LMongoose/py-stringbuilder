@@ -75,6 +75,9 @@ class StringBuilder():
     def clear(self) -> None:
         self._array.clear()
 
+    def copy(self):
+        return StringBuilder(str(self))
+
     def delete(self, start: int, end: int) -> None:
         if(not isinstance(start, int)):
             raise ValueError("The parameter \"start\" must be an integer.")
@@ -191,6 +194,15 @@ class StringBuilder():
 
         return str(self).rstrip(chars)
 
+    def set_char_at(self, index: int, char: str) -> None:
+        if(not isinstance(index, int)):
+            raise ValueError("The parameter \"index\" must be an integer.")
+
+        if(not isinstance(char, str)):
+            raise ValueError("The parameter \"char\" must be a string.")
+
+        self._array[index] = char
+
     def split(self, separator: str, maxsplit = -1) -> str:
         if(not isinstance(substring, str)):
             raise ValueError("The parameter \"substring\" must be a string.")
@@ -217,6 +229,18 @@ class StringBuilder():
             raise ValueError("The parameter \"chars\" must be a string.")
 
         return str(self).strip(chars)
+
+    def sub_sequence(self, start: int, end: int = None) -> str:
+        if(not isinstance(start, int)):
+            raise ValueError("The parameter \"start\" must be an integer.")
+
+        if(not isinstance(end, int)):
+            raise ValueError("The parameter \"end\" must be an integer.")
+
+        if(end == None):
+            end = (len(self) - 1)
+
+        return self._array[start:end]
 
     def substring(self, start: int, end: int = None) -> str:
         if(not isinstance(start, int)):
