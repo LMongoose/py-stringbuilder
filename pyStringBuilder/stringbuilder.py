@@ -69,7 +69,7 @@ class StringBuilder():
 
         self._array.extend(separator.join(str(x) for x in item))
 
-    def append_line(self, string: str = None):
+    def append_line(self, string: str = None)-> None:
         if(not isinstance(string, str)):
             raise ValueError("The parameter \"string\" must be a string.")
 
