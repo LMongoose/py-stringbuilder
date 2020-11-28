@@ -63,6 +63,9 @@ class StringBuilder():
 
         self._array.extend(separator.join(str(x) for x in item))
 
+    def capitalize(self):
+        pass
+
     def char_at(self, index: int) -> str:
         if(not isinstance(index, int)):
             raise ValueError("The parameter \"index\" must be an integer.")
@@ -87,6 +90,15 @@ class StringBuilder():
 
         self._array.pop(index)
 
+    def encode(self):
+        pass
+
+    def endswith(self, substring: str):
+        pass
+
+    def find(self, substring: str):
+        pass
+
     def index_of(self, string: str, start = 0) -> int:
         if(not isinstance(string, str)):
             raise ValueError("The parameter \"string\" must be a string.")
@@ -101,6 +113,12 @@ class StringBuilder():
             raise ValueError("The parameter \"index\" must be an integer.")
 
         self._array.insert(index, str(item))
+
+    def lower(self):
+        pass
+
+    def lstrip(self):
+        pass
 
     def remove(self, item) -> None:
         if(isinstance(item, int)):
@@ -137,6 +155,15 @@ class StringBuilder():
     def reverse(self) -> None:
         self._array.reverse()
 
+    def split(self, separator: str):
+        pass
+
+    def startswith(self):
+        pass
+
+    def strip(self):
+        pass
+
     def substring(self, start: int, end: int = None) -> str:
         if(not isinstance(start, int)):
             raise ValueError("The parameter \"start\" must be an integer.")
@@ -148,3 +175,9 @@ class StringBuilder():
             end = (len(self) - 1)
 
         return "".join(self._array[start:end])
+
+    def swapcase(self):
+        pass
+
+    def upper(self):
+        pass
