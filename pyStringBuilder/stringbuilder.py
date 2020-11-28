@@ -142,8 +142,11 @@ class StringBuilder():
     def lower(self) -> str:
         return str(self).lower()
 
-    def lstrip(self) -> str:
-        return str(self).lstrip()
+    def lstrip(self, chars=None) -> str:
+        if(not isinstance(chars, str)):
+            raise ValueError("The parameter \"chars\" must be a string.")
+
+        return str(self).lstrip(chars)
 
     def remove(self, item) -> None:
         if(isinstance(item, int)):
@@ -180,7 +183,7 @@ class StringBuilder():
     def reverse(self) -> None:
         self._array.reverse()
 
-    def split(self, separator: str, maxsplit=-1) -> str:
+    def split(self, separator: str, maxsplit= -1) -> str:
         if(not isinstance(substring, str)):
             raise ValueError("The parameter \"substring\" must be a string.")
 
@@ -201,8 +204,11 @@ class StringBuilder():
 
         return str(self).startswith(substring, start, end)
 
-    def strip(self) -> str:
-        return str(self).strip()
+    def strip(self, chars=None) -> str:
+        if(not isinstance(chars, str)):
+            raise ValueError("The parameter \"chars\" must be a string.")
+
+        return str(self).strip(chars)
 
     def substring(self, start: int, end: int = None) -> str:
         if(not isinstance(start, int)):
