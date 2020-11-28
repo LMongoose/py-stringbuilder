@@ -90,7 +90,7 @@ class StringBuilder():
 
         self._array.pop(index)
 
-    def encode(self, encoding="utf-8", errors="strict") -> bytes:
+    def encode(self, encoding = "utf-8", errors = "strict") -> bytes:
         if(not isinstance(encoding, str)):
             raise ValueError("The parameter \"encoding\" must be a string.")
 
@@ -100,7 +100,7 @@ class StringBuilder():
 
         return str(self).encode(encoding, errors)
 
-    def endswith(self, substring: str, start=0, end=-1) -> bool:
+    def endswith(self, substring: str, start = 0, end = -1) -> bool:
         if(not isinstance(substring, str)):
             raise ValueError("The parameter \"substring\" must be a string.")
 
@@ -112,7 +112,7 @@ class StringBuilder():
 
         return str(self).endswith(substring, start, end)
 
-    def find(self, substring: str, start=0, end=-1) -> int:
+    def find(self, substring: str, start = 0, end = -1) -> int:
         if(not isinstance(substring, str)):
             raise ValueError("The parameter \"substring\" must be a string.")
 
@@ -142,7 +142,7 @@ class StringBuilder():
     def lower(self) -> str:
         return str(self).lower()
 
-    def lstrip(self, chars=None) -> str:
+    def lstrip(self, chars = None) -> str:
         if(not isinstance(chars, str)):
             raise ValueError("The parameter \"chars\" must be a string.")
 
@@ -183,7 +183,7 @@ class StringBuilder():
     def reverse(self) -> None:
         self._array.reverse()
 
-    def split(self, separator: str, maxsplit= -1) -> str:
+    def split(self, separator: str, maxsplit = -1) -> str:
         if(not isinstance(substring, str)):
             raise ValueError("The parameter \"substring\" must be a string.")
 
@@ -192,7 +192,7 @@ class StringBuilder():
 
         return str(self).split(separator, maxsplit)
 
-    def startswith(self, substring: str, start=0, end=-1) -> bool:
+    def startswith(self, substring: str, start = 0, end = -1) -> bool:
         if(not isinstance(substring, str)):
             raise ValueError("The parameter \"substring\" must be a string.")
 
@@ -204,7 +204,7 @@ class StringBuilder():
 
         return str(self).startswith(substring, start, end)
 
-    def strip(self, chars=None) -> str:
+    def strip(self, chars = None) -> str:
         if(not isinstance(chars, str)):
             raise ValueError("The parameter \"chars\" must be a string.")
 
