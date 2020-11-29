@@ -2,7 +2,7 @@
 class StringBuilder():
     """Python equivalent of Java and C# StringBuilders to help who is used to work with them."""
 
-    def __init__(self, obj=None):
+    def __init__(self, obj = None):
         self._array = []
         if(obj is not None):
             self.append(obj)
@@ -227,6 +227,9 @@ class StringBuilder():
             raise ValueError("The parameter \"maxsplit\" must be an integer.")
 
         return str(self).split(separator, maxsplit)
+
+    def splitlines(self) -> list:
+        return str(self).splitlines()
 
     def startswith(self, substring: str, start = 0, end = -1) -> bool:
         if(not isinstance(substring, str)):
