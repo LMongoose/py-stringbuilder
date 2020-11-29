@@ -28,6 +28,7 @@ class StringBuilder():
     def __eq__(self, other) -> bool:
         if(type(self) == type(other)):
             return self._array == other._array
+
         else:
             return False
 
