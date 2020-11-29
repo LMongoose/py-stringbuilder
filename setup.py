@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = 'pyStringBuilder',
     packages = ['pyStringBuilder'],
-    version = '0.0.5',
+    version = '0.0.6',
     license = 'GNU General Public License v3 (GPLv3)',
     description = 'A python implementation of StringBuilder class found on Java and C-Sharp.',
     author = 'LMongoose',
