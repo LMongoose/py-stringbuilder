@@ -22,7 +22,7 @@ class StringBuilder():
     def __getitem__(self, index: int):
         if(not isinstance(index, int)):
             raise ValueError("The parameter \"index\" must be an integer.")
-        
+
         return self._array[index]
 
     def __eq__(self, other) -> bool:
@@ -229,8 +229,8 @@ class StringBuilder():
 
         return str(self).split(separator, maxsplit)
 
-    def splitlines(self) -> list:
-        return str(self).splitlines()
+    def splitlines(self, keepends=False) -> list:
+        return str(self).splitlines(keepends)
 
     def startswith(self, substring: str, start = 0, end = -1) -> bool:
         if(not isinstance(substring, str)):
