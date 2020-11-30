@@ -161,6 +161,12 @@ class StringBuilder():
 
         self._array.insert(index, str(item))
 
+    def last_index_of(self, substring: str):
+        if(not isinstance(substring, str)):
+            raise ValueError("The parameter \"substring\" must be a string.")
+
+        return str(self).rfind(substring)
+
     def lower(self) -> str:
         return str(self).lower()
 
