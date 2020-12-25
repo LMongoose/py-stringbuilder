@@ -1,7 +1,7 @@
 # pyStringBuilder
 A python implementation of StringBuilder class found on Java and C-Sharp.
 
-PyPi url: https://pypi.org/project/pyStringBuilder/
+[![PyPI version](https://badge.fury.io/py/pyStringBuilder.svg)](https://badge.fury.io/py/pyStringBuilder)
 
 ### Features
   - useful methods from Python string object
