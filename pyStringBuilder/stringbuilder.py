@@ -227,8 +227,8 @@ class StringBuilder():
         self._array[index] = char
 
     def split(self, separator: str, maxsplit = -1) -> str:
-        if(not isinstance(substring, str)):
-            raise ValueError("The parameter \"substring\" must be a string.")
+        if(not isinstance(separator, str)):
+            raise ValueError("The parameter \"separator\" must be a string.")
 
         if(not isinstance(maxsplit, int)):
             raise ValueError("The parameter \"maxsplit\" must be an integer.")
