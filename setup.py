@@ -7,7 +7,6 @@ setup(
     license = 'GNU General Public License v3 (GPLv3)',
     description = 'A python implementation of StringBuilder class found on Java and C-Sharp.',
     author = 'LMongoose',
-    author_email = 'lukaspellezario@hotmail.com',
     url = 'https://github.com/LMongoose/py-stringbuilder',
     download_url = 'https://github.com/LMongoose/py-stringbuilder/0.0.1.tar.gz',
     keywords = [
