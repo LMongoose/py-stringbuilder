@@ -70,14 +70,14 @@ class StringBuilder():
 
         self._array.extend(separator.join(str(x) for x in item))
 
-    def append_line(self, string: str = None)-> None:
-        if(not isinstance(string, str)):
+    def append_line(self, line: str = None)-> None:
+        if(not isinstance(line, str)):
             raise ValueError("The parameter \"string\" must be a string.")
 
-        if(string is None):
+        if(line is None):
             self.append("\n")
         else:
-            self.append(string)
+            self.append(line)
             self.append("\n")
 
     def capitalize(self) -> str:
